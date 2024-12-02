@@ -88,22 +88,6 @@
             background-color: #2980b9;
         }
 
-        /* Load More Button */
-        #load-more {
-            display: block;
-            margin: 2rem auto;
-            padding: 0.5rem 2rem;
-            background: #007BFF;
-            color: #fff;
-            border: none;
-            cursor: pointer;
-            font-size: 1rem;
-            border-radius: 5px;
-        }
-        #load-more:hover {
-            background: #0056b3;
-        }
-
         /* Responsive Design */
         @media (max-width: 768px) {
             .book-grid {
@@ -121,65 +105,61 @@
         <section class="category-detail">
             <h1>Cultivation Novels</h1>
             <p>Explore all the books in the Cultivation category.</p>
-            <div id="book-container" class="book-grid"></div>
-            <button id="load-more" data-page="1" data-category="cultivation">Load More</button>
+            <div class="book-grid">
+                <div class="book-card">
+                    <img src="book1.jpg" alt="Book 1">
+                    <h3>Book Title 1</h3>
+                    <p>By: Author 1</p>
+                    <a href="book1-link.html" target="_blank">
+                        <button>Read Now</button>
+                    </a>
+                </div>
+                <div class="book-card">
+                    <img src="book2.jpg" alt="Book 2">
+                    <h3>Book Title 2</h3>
+                    <p>By: Author 2</p>
+                    <a href="book2-link.html" target="_blank">
+                        <button>Read Now</button>
+                    </a>
+                </div>
+                <div class="book-card">
+                    <img src="book3.jpg" alt="Book 3">
+                    <h3>Book Title 3</h3>
+                    <p>By: Author 3</p>
+                    <a href="book3-link.html" target="_blank">
+                        <button>Read Now</button>
+                    </a>
+                </div>
+                <div class="book-card">
+                    <img src="book4.jpg" alt="Book 4">
+                    <h3>Book Title 4</h3>
+                    <p>By: Author 4</p>
+                    <a href="book4-link.html" target="_blank">
+                        <button>Read Now</button>
+                    </a>
+                </div>
+                <div class="book-card">
+                    <img src="book5.jpg" alt="Book 5">
+                    <h3>Book Title 5</h3>
+                    <p>By: Author 5</p>
+                    <a href="book5-link.html" target="_blank">
+                        <button>Read Now</button>
+                    </a>
+                </div>
+                <div class="book-card">
+                    <img src="book6.jpg" alt="Book 6">
+                    <h3>Book Title 6</h3>
+                    <p>By: Author 6</p>
+                    <a href="book6-link.html" target="_blank">
+                        <button>Read Now</button>
+                    </a>
+                </div>
+            </div>
         </section>
     </main>
 
     <footer>
         &copy; 2024 E-Book Reading Platform | All Rights Reserved
     </footer>
-
-    <script>
-        document.addEventListener("DOMContentLoaded", () => {
-            const bookContainer = document.getElementById("book-container");
-            const loadMoreButton = document.getElementById("load-more");
-
-            async function loadBooks(category, page) {
-                try {
-                    const response = await fetch(`/api/books?category=${category}&page=${page}&limit=6`);
-                    const data = await response.json();
-
-                    if (data.books.length > 0) {
-                        data.books.forEach(book => {
-                            const bookCard = document.createElement("div");
-                            bookCard.className = "book-card";
-                            bookCard.innerHTML = `
-                                <img src="${book.image}" alt="${book.title}">
-                                <h3>${book.title}</h3>
-                                <p>By: ${book.author}</p>
-                                <a href="${book.link}" target="_blank">
-                                    <button>Read Now</button>
-                                </a>
-                            `;
-                            bookContainer.appendChild(bookCard);
-                        });
-
-                        // Update the page number
-                        loadMoreButton.dataset.page = parseInt(page) + 1;
-                    }
-
-                    // Hide the button if no more books
-                    if (bookContainer.children.length >= data.total) {
-                        loadMoreButton.style.display = "none";
-                    }
-                } catch (error) {
-                    console.error("Error loading books:", error);
-                }
-            }
-
-            // Initial load
-            const initialCategory = loadMoreButton.dataset.category;
-            const initialPage = loadMoreButton.dataset.page;
-            loadBooks(initialCategory, initialPage);
-
-            // Load more on button click
-            loadMoreButton.addEventListener("click", () => {
-                const category = loadMoreButton.dataset.category;
-                const nextPage = loadMoreButton.dataset.page;
-                loadBooks(category, nextPage);
-            });
-        });
-    </script>
 </body>
 </html>
