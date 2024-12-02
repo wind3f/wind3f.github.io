@@ -1,246 +1,349 @@
-<!DOCTYPE HTML>
-<!--
-	Phantom by HTML5 UP
-	html5up.net | @ajlkn
-	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
--->
-<html>
-	<head>
-		<title>CN NOVEL</title>
-		<meta charset="utf-8" />
-		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
-		<link rel="stylesheet" href="assets/css/main.css" />
-		<noscript><link rel="stylesheet" href="assets/css/noscript.css" /></noscript>
-	</head>
-	<body class="is-preload">
-		<!-- Wrapper -->
-			<div id="wrapper">
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>电子书阅读平台</title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            line-height: 1.6;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+        }
+        .container {
+            width: 90%;
+            margin: auto;
+            overflow: hidden;
+            padding: 20px;
+        }
+        header {
+            background-color: #2c3e50;
+            color: #fff;
+            text-align: center;
+            padding: 1rem;
+        }
+        nav {
+            background-color: #34495e;
+            color: #fff;
+            padding: 0.5rem;
+        }
+        nav ul {
+            list-style-type: none;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+        nav ul li {
+            margin: 0 15px;
+            padding: 5px;
+        }
+        nav ul li a {
+            color: #fff;
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+        nav ul li a:hover {
+            color: #3498db;
+        }
+        .category-section {
+            margin-bottom: 30px;
+        }
+        .category-title {
+            color: #2c3e50;
+            border-bottom: 2px solid #3498db;
+            padding-bottom: 10px;
+            margin-bottom: 20px;
+        }
+        .book-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
+            gap: 20px;
+        }
+        .book-card {
+            background-color: #fff;
+            border-radius: 8px;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+            padding: 15px;
+            text-align: center;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+        .book-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 8px 15px rgba(0,0,0,0.2);
+        }
+        .book-card img {
+            max-width: 150px;
+            height: 220px;
+            object-fit: cover;
+            border-radius: 5px;
+        }
+        .book-card h3 {
+            margin: 10px 0;
+            color: #2c3e50;
+            font-size: 16px;
+        }
+        .book-card p {
+            color: #7f8c8d;
+            margin-bottom: 10px;
+            font-size: 14px;
+        }
+        .book-card button {
+            background-color: #3498db;
+            color: white;
+            border: none;
+            padding: 8px 15px;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+        .book-card button:hover {
+            background-color: #2980b9;
+        }
+        footer {
+            background-color: #2c3e50;
+            color: #fff;
+            text-align: center;
+            padding: 1rem;
+            width: 100%;
+        }
+        @media (max-width: 768px) {
+            nav ul li {
+                margin: 5px;
+            }
+            .book-grid {
+                grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>电子书阅读平台</h1>
+    </header>
 
-				<!-- Header -->
-					<header id="header">
-						<div class="inner">
+    <nav>
+        <ul>
+            <li><a href="#">首页</a></li>
+            <li><a href="#">修真</a></li>
+            <li><a href="#">玄幻</a></li>
+            <li><a href="#">穿越</a></li>
+            <li><a href="#">军事</a></li>
+            <li><a href="#">仙侠</a></li>
+            <li><a href="#">历史</a></li>
+            <li><a href="#">悬疑</a></li>
+            <li><a href="#">武侠</a></li>
+            <li><a href="#">排行榜</a></li>
+            <li><a href="#">个人中心</a></li>
+        </ul>
+    </nav>
 
-							<!-- Logo -->
-								<a href="index.html" class="logo">
-									<span class="symbol"><img src="images/logo.svg" alt="" /></span><span class="title">CNNOVEL</span>
-								</a>
+    <div class="container">
+        <!-- 修真小说类别 -->
+        <section class="category-section">
+            <h2 class="category-title">修真小说</h2>
+            <div class="book-grid">
+                <div class="book-card">
+                    <img src="/api/placeholder/150/220" alt="修真小说1">
+                    <h3>逆天修仙</h3>
+                    <p>作者：林海</p>
+                    <button>立即阅读</button>
+                </div>
+                <div class="book-card">
+                    <img src="/api/placeholder/150/220" alt="修真小说2">
+                    <h3>仙路争锋</h3>
+                    <p>作者：吴天</p>
+                    <button>立即阅读</button>
+                </div>
+                <div class="book-card">
+                    <img src="/api/placeholder/150/220" alt="修真小说3">
+                    <h3>修真奇缘</h3>
+                    <p>作者：孙宇</p>
+                    <button>立即阅读</button>
+                </div>
+            </div>
+        </section>
 
-							<!-- Nav -->
-								<nav>
-									<ul>
-										<li><a href="#menu">Menu</a></li>
-									</ul>
-								</nav>
+        <!-- 玄幻小说类别 -->
+        <section class="category-section">
+            <h2 class="category-title">玄幻小说</h2>
+            <div class="book-grid">
+                <div class="book-card">
+                    <img src="/api/placeholder/150/220" alt="玄幻小说1">
+                    <h3>神魔大陆</h3>
+                    <p>作者：风青阳</p>
+                    <button>立即阅读</button>
+                </div>
+                <div class="book-card">
+                    <img src="/api/placeholder/150/220" alt="玄幻小说2">
+                    <h3>玄界之门</h3>
+                    <p>作者：红尘散仙</p>
+                    <button>立即阅读</button>
+                </div>
+                <div class="book-card">
+                    <img src="/api/placeholder/150/220" alt="玄幻小说3">
+                    <h3>万界仙踪</h3>
+                    <p>作者：云中君</p>
+                    <button>立即阅读</button>
+                </div>
+            </div>
+        </section>
 
-						</div>
-					</header>
+        <!-- 穿越小说类别 -->
+        <section class="category-section">
+            <h2 class="category-title">穿越小说</h2>
+            <div class="book-grid">
+                <div class="book-card">
+                    <img src="/api/placeholder/150/220" alt="穿越小说1">
+                    <h3>重生之商业帝国</h3>
+                    <p>作者：商业大亨</p>
+                    <button>立即阅读</button>
+                </div>
+                <div class="book-card">
+                    <img src="/api/placeholder/150/220" alt="穿越小说2">
+                    <h3>我在古代当皇帝</h3>
+                    <p>作者：皇帝笔记</p>
+                    <button>立即阅读</button>
+                </div>
+                <div class="book-card">
+                    <img src="/api/placeholder/150/220" alt="穿越小说3">
+                    <h3>科技穿越</h3>
+                    <p>作者：未来学者</p>
+                    <button>立即阅读</button>
+                </div>
+            </div>
+        </section>
 
-				<!-- Menu -->
-					<nav id="menu">
-						<h2>Menu</h2>
-						<ul>
-							<li><a href="index.html">Home</a></li>
-							<li><a href="generic.html">Ipsum veroeros</a></li>
-							<li><a href="generic.html">Tempus etiam</a></li>
-							<li><a href="generic.html">Consequat dolor</a></li>
-							<li><a href="elements.html">Elements</a></li>
-						</ul>
-					</nav>
+        <!-- 军事小说类别 -->
+        <section class="category-section">
+            <h2 class="category-title">军事小说</h2>
+            <div class="book-grid">
+                <div class="book-card">
+                    <img src="/api/placeholder/150/220" alt="军事小说1">
+                    <h3>特种兵之战</h3>
+                    <p>作者：刘强</p>
+                    <button>立即阅读</button>
+                </div>
+                <div class="book-card">
+                    <img src="/api/placeholder/150/220" alt="军事小说2">
+                    <h3>战火中的荣耀</h3>
+                    <p>作者：陈晓</p>
+                    <button>立即阅读</button>
+                </div>
+                <div class="book-card">
+                    <img src="/api/placeholder/150/220" alt="军事小说3">
+                    <h3>铁血军魂</h3>
+                    <p>作者：赵勇</p>
+                    <button>立即阅读</button>
+                </div>
+            </div>
+        </section>
 
-				<!-- Main -->
-					<div id="main">
-						<div class="inner">
-							<header>
-								<h1>Here will share the Chinese Novel that you maybe like<br />
-								Welcome to visit my <a href="https://lovecnnovel.blogspot.com/">CNNOVEL</a>.</h1>
-								<p>Etiam quis viverra lorem, in semper lorem. Sed nisl arcu euismod sit amet nisi euismod sed cursus arcu elementum ipsum arcu vivamus quis venenatis orci lorem ipsum et magna feugiat veroeros aliquam. Lorem ipsum dolor sit amet nullam dolore.</p>
-							</header>
-							<section class="tiles">
-								<article class="style1">
-									<span class="image">
-										<img src="images/pic01.jpg" alt="" />
-									</span>
-									<a href="generic.html">
-										<h2>Magna</h2>
-										<div class="content">
-											<p>Sed nisl arcu euismod sit amet nisi lorem etiam dolor veroeros et feugiat.</p>
-										</div>
-									</a>
-								</article>
-								<article class="style2">
-									<span class="image">
-										<img src="images/pic02.jpg" alt="" />
-									</span>
-									<a href="generic.html">
-										<h2>Lorem</h2>
-										<div class="content">
-											<p>Sed nisl arcu euismod sit amet nisi lorem etiam dolor veroeros et feugiat.</p>
-										</div>
-									</a>
-								</article>
-								<article class="style3">
-									<span class="image">
-										<img src="images/pic03.jpg" alt="" />
-									</span>
-									<a href="generic.html">
-										<h2>Feugiat</h2>
-										<div class="content">
-											<p>Sed nisl arcu euismod sit amet nisi lorem etiam dolor veroeros et feugiat.</p>
-										</div>
-									</a>
-								</article>
-								<article class="style4">
-									<span class="image">
-										<img src="images/pic04.jpg" alt="" />
-									</span>
-									<a href="generic.html">
-										<h2>Tempus</h2>
-										<div class="content">
-											<p>Sed nisl arcu euismod sit amet nisi lorem etiam dolor veroeros et feugiat.</p>
-										</div>
-									</a>
-								</article>
-								<article class="style5">
-									<span class="image">
-										<img src="images/pic05.jpg" alt="" />
-									</span>
-									<a href="generic.html">
-										<h2>Aliquam</h2>
-										<div class="content">
-											<p>Sed nisl arcu euismod sit amet nisi lorem etiam dolor veroeros et feugiat.</p>
-										</div>
-									</a>
-								</article>
-								<article class="style6">
-									<span class="image">
-										<img src="images/pic06.jpg" alt="" />
-									</span>
-									<a href="generic.html">
-										<h2>Veroeros</h2>
-										<div class="content">
-											<p>Sed nisl arcu euismod sit amet nisi lorem etiam dolor veroeros et feugiat.</p>
-										</div>
-									</a>
-								</article>
-								<article class="style2">
-									<span class="image">
-										<img src="images/pic07.jpg" alt="" />
-									</span>
-									<a href="generic.html">
-										<h2>Ipsum</h2>
-										<div class="content">
-											<p>Sed nisl arcu euismod sit amet nisi lorem etiam dolor veroeros et feugiat.</p>
-										</div>
-									</a>
-								</article>
-								<article class="style3">
-									<span class="image">
-										<img src="images/pic08.jpg" alt="" />
-									</span>
-									<a href="generic.html">
-										<h2>Dolor</h2>
-										<div class="content">
-											<p>Sed nisl arcu euismod sit amet nisi lorem etiam dolor veroeros et feugiat.</p>
-										</div>
-									</a>
-								</article>
-								<article class="style1">
-									<span class="image">
-										<img src="images/pic09.jpg" alt="" />
-									</span>
-									<a href="generic.html">
-										<h2>Nullam</h2>
-										<div class="content">
-											<p>Sed nisl arcu euismod sit amet nisi lorem etiam dolor veroeros et feugiat.</p>
-										</div>
-									</a>
-								</article>
-								<article class="style5">
-									<span class="image">
-										<img src="images/pic10.jpg" alt="" />
-									</span>
-									<a href="generic.html">
-										<h2>Ultricies</h2>
-										<div class="content">
-											<p>Sed nisl arcu euismod sit amet nisi lorem etiam dolor veroeros et feugiat.</p>
-										</div>
-									</a>
-								</article>
-								<article class="style6">
-									<span class="image">
-										<img src="images/pic11.jpg" alt="" />
-									</span>
-									<a href="generic.html">
-										<h2>Dictum</h2>
-										<div class="content">
-											<p>Sed nisl arcu euismod sit amet nisi lorem etiam dolor veroeros et feugiat.</p>
-										</div>
-									</a>
-								</article>
-								<article class="style4">
-									<span class="image">
-										<img src="images/pic12.jpg" alt="" />
-									</span>
-									<a href="generic.html">
-										<h2>Pretium</h2>
-										<div class="content">
-											<p>Sed nisl arcu euismod sit amet nisi lorem etiam dolor veroeros et feugiat.</p>
-										</div>
-									</a>
-								</article>
-							</section>
-						</div>
-					</div>
+        <!-- 仙侠小说类别 -->
+        <section class="category-section">
+            <h2 class="category-title">仙侠小说</h2>
+            <div class="book-grid">
+                <div class="book-card">
+                    <img src="/api/placeholder/150/220" alt="仙侠小说1">
+                    <h3>仙境幻境</h3>
+                    <p>作者：青云子</p>
+                    <button>立即阅读</button>
+                </div>
+                <div class="book-card">
+                    <img src="/api/placeholder/150/220" alt="仙侠小说2">
+                    <h3>侠客行</h3>
+                    <p>作者：剑舞江湖</p>
+                    <button>立即阅读</button>
+                </div>
+                <div class="book-card">
+                    <img src="/api/placeholder/150/220" alt="仙侠小说3">
+                    <h3>飞剑问道</h3>
+                    <p>作者：逍遥仙</p>
+                    <button>立即阅读</button>
+                </div>
+            </div>
+        </section>
 
-				<!-- Footer -->
-					<footer id="footer">
-						<div class="inner">
-							<section>
-								<h2>Get in touch</h2>
-								<form method="post" action="#">
-									<div class="fields">
-										<div class="field half">
-											<input type="text" name="name" id="name" placeholder="Name" />
-										</div>
-										<div class="field half">
-											<input type="email" name="email" id="email" placeholder="Email" />
-										</div>
-										<div class="field">
-											<textarea name="message" id="message" placeholder="Message"></textarea>
-										</div>
-									</div>
-									<ul class="actions">
-										<li><input type="submit" value="Send" class="primary" /></li>
-									</ul>
-								</form>
-							</section>
-							<section>
-								<h2>Follow</h2>
-								<ul class="icons">
-									<li><a href="#" class="icon brands style2 fa-twitter"><span class="label">Twitter</span></a></li>
-									<li><a href="#" class="icon brands style2 fa-facebook-f"><span class="label">Facebook</span></a></li>
-									<li><a href="#" class="icon brands style2 fa-instagram"><span class="label">Instagram</span></a></li>
-									<li><a href="#" class="icon brands style2 fa-dribbble"><span class="label">Dribbble</span></a></li>
-									<li><a href="#" class="icon brands style2 fa-github"><span class="label">GitHub</span></a></li>
-									<li><a href="#" class="icon brands style2 fa-500px"><span class="label">500px</span></a></li>
-									<li><a href="#" class="icon solid style2 fa-phone"><span class="label">Phone</span></a></li>
-									<li><a href="#" class="icon solid style2 fa-envelope"><span class="label">Email</span></a></li>
-								</ul>
-							</section>
-							<ul class="copyright">
-								<li>&copy; Untitled. All rights reserved</li><li>Design: <a href="http://html5up.net">HTML5 UP</a></li>
-							</ul>
-						</div>
-					</footer>
+        <!-- 历史小说类别 -->
+        <section class="category-section">
+            <h2 class="category-title">历史小说</h2>
+            <div class="book-grid">
+                <div class="book-card">
+                    <img src="/api/placeholder/150/220" alt="历史小说1">
+                    <h3>大明王朝</h3>
+                    <p>作者：历史君</p>
+                    <button>立即阅读</button>
+                </div>
+                <div class="book-card">
+                    <img src="/api/placeholder/150/220" alt="历史小说2">
+                    <h3>帝王传奇</h3>
+                    <p>作者：朝代笔记</p>
+                    <button>立即阅读</button>
+                </div>
+                <div class="book-card">
+                    <img src="/api/placeholder/150/220" alt="历史小说3">
+                    <h3>风云三国</h3>
+                    <p>作者：三国演义</p>
+                    <button>立即阅读</button>
+                </div>
+            </div>
+        </section>
 
-			</div>
+        <!-- 悬疑小说类别 -->
+        <section class="category-section">
+            <h2 class="category-title">悬疑小说</h2>
+            <div class="book-grid">
+                <div class="book-card">
+                    <img src="/api/placeholder/150/220" alt="悬疑小说1">
+                    <h3>迷踪之谜</h3>
+                    <p>作者：李明</p>
+                    <button>立即阅读</button>
+                </div>
+                <div class="book-card">
+                    <img src="/api/placeholder/150/220" alt="悬疑小说2">
+                    <h3>黑暗密码</h3>
+                    <p>作者：王红</p>
+                    <button>立即阅读</button>
+                </div>
+                <div class="book-card">
+                    <img src="/api/placeholder/150/220" alt="悬疑小说3">
+                    <h3>无声的证据</h3>
+                    <p>作者：张伟</p>
+                    <button>立即阅读</button>
+                </div>
+            </div>
+        </section>
 
-		<!-- Scripts -->
-			<script src="assets/js/jquery.min.js"></script>
-			<script src="assets/js/browser.min.js"></script>
-			<script src="assets/js/breakpoints.min.js"></script>
-			<script src="assets/js/util.js"></script>
-			<script src="assets/js/main.js"></script>
+        <!-- 武侠小说类别 -->
+        <section class="category-section">
+            <h2 class="category-title">武侠小说</h2>
+            <div class="book-grid">
+                <div class="book-card">
+                    <img src="/api/placeholder/150/220" alt="武侠小说1">
+                    <h3>笑傲江湖</h3>
+                    <p>作者：金庸</p>
+                    <button>立即阅读</button>
+                </div>
+                <div class="book-card">
+                    <img src="/api/placeholder/150/220" alt="武侠小说2">
+                    <h3>天龙八部</h3>
+                    <p>作者：金庸</p>
+                    <button>立即阅读</button>
+                </div>
+                <div class="book-card">
+                    <img src="/api/placeholder/150/220" alt="武侠小说3">
+                    <h3>射雕英雄传</h3>
+                    <p>作者：金庸</p>
+                    <button>立即阅读</button>
+                </div>
+            </div>
+        </section>
+    </div>
 
-	</body>
+    <footer>
+        <p>&copy; 2024 电子书阅读平台 | 版权所有</p>
+    </footer>
+</body>
 </html>
